@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title id="tabTitle">my portfolio lol</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0b0b0c;
+  color: #eaeaea;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  padding: 100px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 { font-size: 64px; font-weight: 500; }
+
+.subtle { opacity: 0.5; }
+
+.cursive {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+/* cursor */
+.cursor {
+  display: inline-block;
+  width: 6px;
+  height: 1em;
+  background: white;
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* terminal */
+.terminal {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  max-width: 320px;
+}
+
+/* projects */
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 500px;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s;
+}
+
+.project:hover {
+  transform: translateX(4px);
+}
+
+.project-title { font-size: 14px; }
+.project-desc { font-size: 12px; opacity: 0.5; }
+.project-meta { font-size: 11px; opacity: 0.4; }
+
+/* divider */
+.line {
+  width: 24px;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 10px 0;
+}
+
+/* fade */
+.fade {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: 0.5s ease;
+}
+
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* nav */
+.nav {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.5);
+}
+
+/* contact */
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* footer */
+.credit {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  body { overflow: auto; }
+
+  .wrapper {
+    flex-direction: column;
+    transform: none !important;
+  }
+
+  .section {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 60px 20px;
+  }
+
+  h1 { font-size: 36px; }
+
+  .nav { display: none; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav" id="nav"></div>
+
+<div class="wrapper" id="wrapper">
+
+<!-- HERO -->
+<section class="section fade">
+  <h1>
+    <span id="mainTyping"></span><span class="cursor"></span>
+  </h1>
+
+  <div class="cursive">mostly reversing.</div>
+
+  <div class="terminal mono">
+    dig tech @ dublin uni <br>
+    c++ / lua <br>
+    summit.vin
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section fade">
+  <div class="mono">/about</div>
+  <div class="line"></div>
+
+  <h2>
+    i spend a lot of time
+    <span class="cursive">figuring stuff out.</span>
+  </h2>
+
+  <p class="subtle" style="margin-top:12px; max-width:400px;">
+    mostly debugging things and understanding how they work internally.
+  </p>
+</section>
+
+<!-- PROJECTS -->
+<section class="section fade">
+  <div class="mono">/projects</div>
+  <div class="line"></div>
+
+  <div class="projects">
+
+    <a href="#" class="project">
+      <div>
+        <div class="project-title">memory viewer</div>
+        <div class="project-desc">inspect and navigate process memory</div>
+      </div>
+      <div class="project-meta">c++</div>
+    </a>
+
+    <a href="#" class="project">
+      <div>
+        <div class="project-title">process tools</div>
+        <div class="project-desc">debugging / hooking utilities</div>
+      </div>
+      <div class="project-meta">c++ / lua</div>
+    </a>
+
+    <a href="#" class="project">
+      <div>
+        <div class="project-title">summit.vin</div>
+        <div class="project-desc">personal project / ongoing</div>
+      </div>
+      <div class="project-meta">web</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section fade">
+  <div class="mono">/contact</div>
+  <div class="line"></div>
+
+  <h2>contact</h2>
+
+  <div style="margin-top:16px; display:flex; flex-direction:column; gap:10px; max-width:260px;">
+    
+    <div class="contact-item">
+      <span class="mono">discord</span>
+      <span>.listn</span>
+    </div>
+
+    <div class="contact-item">
+      <span class="mono">telegram</span>
+      <span>@atomwall</span>
+    </div>
+
+    <div class="contact-item">
+      <span class="mono">email</span>
+      <span>5jihtsvdg@mozmail.com</span>
+    </div>
+
+  </div>
+</section>
+
+</div>
+
+<div class="credit">made by listn</div>
+
+<script>
+/* MAIN TITLE (type once) */
+const mainText = "listn";
+const mainEl = document.getElementById("mainTyping");
+
+let i = 0;
+function typeMain() {
+  if (i <= mainText.length) {
+    mainEl.textContent = mainText.slice(0, i++);
+    setTimeout(typeMain, 80);
+  }
+}
+typeMain();
+
+/* TAB TITLE LOOP */
+const tabText = "my portfolio lol";
+let t = 0;
+let deleting = false;
+
+function tabLoop() {
+  if (!deleting) {
+    document.title = tabText.slice(0, t++);
+    if (t > tabText.length) {
+      deleting = true;
+      setTimeout(tabLoop, 1000);
+      return;
+    }
+  } else {
+    document.title = tabText.slice(0, t--);
+    if (t < 0) deleting = false;
+  }
+
+  setTimeout(tabLoop, deleting ? 40 : 60);
+}
+tabLoop();
+
+/* scroll system */
+const wrapper = document.getElementById('wrapper');
+const sections = document.querySelectorAll('.section');
+const nav = document.getElementById('nav');
+
+let current = 0;
+let currentX = 0;
+let targetX = 0;
+let locked = false;
+
+const isMobile = () => window.innerWidth <= 768;
+
+sections.forEach((_, i) => {
+  const dot = document.createElement('div');
+  dot.classList.add('dot');
+  if (i === 0) dot.classList.add('active');
+  nav.appendChild(dot);
+});
+
+function updateDots() {
+  document.querySelectorAll('.dot').forEach((d, i) => {
+    d.classList.toggle('active', i === current);
+  });
+}
+
+function reveal() {
+  sections.forEach((sec, i) => {
+    if (i === current || isMobile()) {
+      sec.classList.add('visible');
+    }
+  });
+}
+
+function goTo(i) {
+  current = Math.max(0, Math.min(i, sections.length - 1));
+  targetX = current * window.innerWidth;
+  updateDots();
+  reveal();
+}
+
+window.addEventListener('wheel', (e) => {
+  if (isMobile() || locked) return;
+  locked = true;
+  goTo(current + (e.deltaY > 0 ? 1 : -1));
+  setTimeout(() => locked = false, 500);
+});
+
+function animate() {
+  if (!isMobile()) {
+    currentX += (targetX - currentX) * 0.08;
+    wrapper.style.transform = `translateX(-${currentX}px)`;
+  }
+  requestAnimationFrame(animate);
+}
+animate();
+
+reveal();
+</script>
+
+</body>
+</html>

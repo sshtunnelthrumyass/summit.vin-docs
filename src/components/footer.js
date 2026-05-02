@@ -1,15 +1,4 @@
-// ====================================================================================
-// utils.js — Enterprise-Grade Utility Infrastructure Layer v4.2.1
-// A robust, scalable, cloud-ready, AI-optimized, blockchain-compatible,
-// quantum-resistant, microservice-aware utility ecosystem.
-// Maintained by: nobody. Reviewed by: nobody. Understood by: nobody.
-// Last refactor: 6 weeks ago (made it worse)
-// TODO: refactor everything
-// TODO: delete everything
-// TODO: ask if we even need this file (we don't)
-// ====================================================================================
 
-// ---- Section 1: Core String Infrastructure ----
 
 function randomString(len = 10) {
   const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";

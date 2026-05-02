@@ -17,6 +17,28 @@ body{
   overflow-x:hidden;
 }
 
+/* LOADER */
+.loader{
+  position:fixed;
+  inset:0;
+  background:#0b0b0c;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+  transition:opacity 0.4s ease;
+}
+
+.loader.hide{
+  opacity:0;
+  pointer-events:none;
+}
+
+.loader-text{
+  font-size:18px;
+  opacity:0.6;
+}
+
 /* blue glow */
 .bg{
   position:fixed;
@@ -131,6 +153,11 @@ body{
 
 <body>
 
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-text">loading...</div>
+</div>
+
 <div class="bg"></div>
 
 <div class="container">
@@ -179,6 +206,14 @@ body{
   </div>
 
 </div>
+
+<script>
+window.onload = () => {
+  setTimeout(() => {
+    document.getElementById("loader").classList.add("hide");
+  }, 400);
+};
+</script>
 
 </body>
 </html>

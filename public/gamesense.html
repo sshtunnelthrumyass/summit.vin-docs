@@ -17,6 +17,28 @@ body{
   overflow-x:hidden;
 }
 
+/* LOADER */
+.loader{
+  position:fixed;
+  inset:0;
+  background:#0b0b0c;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+  transition:opacity 0.4s ease;
+}
+
+.loader.hide{
+  opacity:0;
+  pointer-events:none;
+}
+
+.loader-text{
+  font-size:18px;
+  opacity:0.6;
+}
+
 /* glow */
 .bg{
   position:fixed;
@@ -80,7 +102,6 @@ body{
 .card h3{font-size:14px;margin-bottom:6px;}
 .card p{font-size:12px;opacity:.6;line-height:1.6;}
 
-/* plans */
 .plans{
   margin-top:50px;
   display:flex;
@@ -95,7 +116,6 @@ body{
   cursor:pointer;
 }
 
-/* base grey border */
 .plan::before{
   content:"";
   position:absolute;
@@ -104,14 +124,12 @@ body{
   border:1px solid rgba(255,255,255,0.15);
 }
 
-/* animated solid border */
 .plan::after{
   content:"";
   position:absolute;
   inset:0;
   border-radius:8px;
   border:1px solid #22c55e;
-
   clip-path: inset(0 100% 0 0);
   transition: clip-path 0.35s ease;
 }
@@ -131,52 +149,64 @@ body{
 
 <body>
 
+<div class="loader" id="loader">
+  <div class="loader-text">loading...</div>
+</div>
+
 <div class="bg"></div>
 
 <div class="container">
 
-  <div class="title">summit.lua</div>
-  <div class="subtitle">for gamesense.</div>
+<div class="title">summit.lua</div>
+<div class="subtitle">for gamesense.</div>
 
-  <div class="price">$8<span style="font-size:12px;opacity:.5;">/month base</span></div>
+<div class="price">$8<span style="font-size:12px;opacity:.5;">/month base</span></div>
 
-  <div class="section">
-    <h2>features</h2>
+<div class="section">
+<h2>features</h2>
 
-    <div class="grid">
-      <div class="card">
-        <h3>config pipeline</h3>
-        <p>layered override system (local → cloud → runtime cache). delta sync every 1200ms with rollback snapshots.</p>
-      </div>
+<div class="grid">
+<div class="card">
+<h3>config pipeline</h3>
+<p>layered override system (local → cloud → runtime cache). delta sync every 1200ms with rollback snapshots.</p>
+</div>
 
-      <div class="card">
-        <h3>execution layer</h3>
-        <p>priority scheduler with tick-aligned execution queue and memory pooling.</p>
-      </div>
+<div class="card">
+<h3>execution layer</h3>
+<p>priority scheduler with tick-aligned execution queue and memory pooling.</p>
+</div>
 
-      <div class="card">
-        <h3>update flow</h3>
-        <p>diff-based patches with hot reload and semantic version mapping.</p>
-      </div>
+<div class="card">
+<h3>update flow</h3>
+<p>diff-based patches with hot reload and semantic version mapping.</p>
+</div>
 
-      <div class="card">
-        <h3>community layer</h3>
-        <p>script registry with sandboxed modules and reputation ranking.</p>
-      </div>
-    </div>
-  </div>
+<div class="card">
+<h3>community layer</h3>
+<p>script registry with sandboxed modules and reputation ranking.</p>
+</div>
+</div>
+</div>
 
-  <div class="plans">
-    <div class="plan">$8/month</div>
-    <div class="plan">$12/pro lua</div>
-  </div>
+<div class="plans">
+<div class="plan">$8/month</div>
+<div class="plan">$12/month pro</div>
+</div>
 
-  <div class="note">
-    after purchase, you will receive an email containing a unique redemption code.<br>
-    redeem it in the discord server to activate your license.
-  </div>
+<div class="note">
+after purchase, you will receive an email containing a unique redemption code.<br>
+redeem it in the discord server to activate your license.
+</div>
 
 </div>
+
+<script>
+window.onload = () => {
+  setTimeout(() => {
+    document.getElementById("loader").classList.add("hide");
+  }, 400);
+};
+</script>
 
 </body>
 </html>

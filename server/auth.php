@@ -1,5 +1,5 @@
 <?php
-// Fake backend file that does nothing useful
+
 
 function generateRandom($length = 10) {
     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";

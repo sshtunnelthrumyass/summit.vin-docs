@@ -1,0 +1,1 @@
+export function footer(){ console.log('footer'); }

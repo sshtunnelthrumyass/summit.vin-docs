@@ -177,6 +177,9 @@ h1 {
   position: relative;
   padding: 12px 22px;
   cursor: pointer;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
 }
 
 .option::before {
@@ -198,7 +201,7 @@ h1 {
   box-shadow: 0 0 0 1px #3b82f6 inset;
 }
 
-/* ---------- MEDIA (NOW BELOW + BIG STACKED VIDEOS) ---------- */
+/* ---------- MEDIA ---------- */
 .media {
   margin-top: 120px;
   padding-top: 60px;
@@ -213,7 +216,6 @@ h1 {
   margin-bottom: 40px;
 }
 
-/* stacked layout */
 .media-grid {
   display: flex;
   flex-direction: column;
@@ -221,7 +223,6 @@ h1 {
   align-items: center;
 }
 
-/* BIG videos */
 .video {
   width: 100%;
   max-width: 820px;
@@ -237,21 +238,15 @@ h1 {
   border: none;
 }
 
-/* footer */
 .footer {
   margin-top: 60px;
   font-size: 11px;
   opacity: 0.3;
 }
 
-/* mobile */
 @media (max-width: 768px) {
   .features {
     grid-template-columns: 1fr;
-  }
-
-  .video {
-    max-width: 100%;
   }
 }
 </style>
@@ -308,12 +303,13 @@ h1 {
 
     </div>
 
+    <!-- UPDATED OPTIONS -->
     <div class="options">
-      <div class="option gamesense">gamesense</div>
-      <div class="option neverlose">neverlose</div>
+      <a href="/public/gamesense" class="option gamesense">gamesense</a>
+      <a href="/public/neverlose" class="option neverlose">neverlose</a>
     </div>
 
-    <!-- MEDIA SECTION (NOW SCROLL DOWN) -->
+    <!-- MEDIA -->
     <div class="media">
       <div class="media-title">media</div>
 

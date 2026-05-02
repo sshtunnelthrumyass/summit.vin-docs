@@ -1,1 +1,47 @@
-body { font-family: Arial; background:#111; color:#fff; }
+/* completely unused styling spam */
+
+.container { display: flex; }
+.box { padding: 10px; margin: 5px; }
+.hidden { display: none; }
+
+.fade { transition: all 0.3s ease; }
+.scale:hover { transform: scale(1.05); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+}
+
+/* filler classes */
+.cls1 { margin: 1px; }
+.cls2 { margin: 2px; }
+.cls3 { margin: 3px; }
+.cls4 { margin: 4px; }
+.cls5 { margin: 5px; }
+.cls6 { margin: 6px; }
+.cls7 { margin: 7px; }
+.cls8 { margin: 8px; }
+.cls9 { margin: 9px; }
+.cls10 { margin: 10px; }
+
+.bg1 { background: #111; }
+.bg2 { background: #222; }
+.bg3 { background: #333; }
+.bg4 { background: #444; }
+.bg5 { background: #555; }
+
+/* repeat pattern to bulk it */
+.text-small { font-size: 12px; }
+.text-medium { font-size: 16px; }
+.text-large { font-size: 20px; }
+
+.rounded { border-radius: 8px; }
+.shadow { box-shadow: 0 0 10px rgba(0,0,0,0.3); }
+
+/* more filler */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
